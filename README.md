@@ -1,6 +1,6 @@
 # 1º Projeto de DevWeb
 <br>
-<p>Aluno Pedro Henrique Vilela Silva RA: 202108528188
+<p>Aluno Pedro Henrique Vilela Silva RA: 202108528188<br>
 Aluno: Gustavo de Arruda Barbosa RA: 202108774294</p>
 <br>
 Nosso grupo ultilizou a versão do @angular/cli 10
