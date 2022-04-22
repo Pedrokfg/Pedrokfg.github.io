@@ -13,7 +13,8 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ]
 })
 export class TemplateFormModule { }

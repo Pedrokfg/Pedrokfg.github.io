@@ -1,154 +1,96 @@
-<body>
-
-  <form action="" class="row g-3 " #f="ngForm" (ngSubmit)="onSubmit(f)">
-
-      <h2>Dados Pessoais</h2>
-
-      <div class="col-md-6" >
-        <label class="form-label" for="inputNome">Nome</label>
-        <input class="form-control" type="text" name="nome" id="inputNome" placeholder="Digite seu nome" ngModel required #nome="ngModel">
-        <div class="alert alert-danger" role="alert" *ngIf="!nome.valid && nome.touched">
-          Por favor, digite seu nome.
+<body >
+  <form action="" class="container g-3 mx-auto position-absolute top-50 start-50 translate-middle" #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <h2>Cadastro do veiculo</h2>
+      <div class="row mb-3">
+        <label for="modelo" class="col-sm-2 col-form-label">Modelo do veículo</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="modelo" required ngModel #modelo="ngModel" name="modelo">
         </div>
       </div>
-
-      <div class="col-md-6">
-        <label class="form-label" for="inputSobrenome">Sobrenome</label>
-        <input class="form-control" type="text" name="sobrenome" id="inputSobrenome" placeholder="Digite seu sobrenome" ngModel required #sobrenome="ngModel">
-        <div class="alert alert-danger" role="alert" *ngIf="!sobrenome.valid && sobrenome.touched">
-          Por favor, digite seu sobrenome.
+      <div class="row mb-3">
+        <label for="marca" class="col-sm-2 col-form-label">Marca do veículo</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="marca" required ngModel #marca="ngModel" name="marca">
         </div>
       </div>
-
-      <div class="col-md-4">
-        <label class="form-label" for="inputCpf">CPF</label>
-        <input class="form-control" type="text" name="cpf" id="inputCpf" placeholder="Digite seu CPF" ngModel required #cpf="ngModel">
-        <div class="alert alert-danger" role="alert" *ngIf="!cpf.valid && cpf.touched">
-          Por favor, digite seu cpf.
+      <div class="row mb-3">
+        <label for="chassi" class="col-sm-2 col-form-label">Chassi do veículo</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="chassi" required ngModel #chassi="ngModel" name="chassi">
         </div>
       </div>
-
-      <div class="col-md-4">
-        <label class="form-label" for="inputNasc">Data de nascimento</label>
-        <input class="form-control" type="date" name="nasc" id="inputNasc" placeholder="Qual a data do seu nascimento" ngModel required #nasc="ngModel">
-        <div class="alert alert-danger" role="alert" *ngIf="!nasc.valid && nasc.touched">
-          Por favor, digite sua data de nascimento.
+      <div class="row mb-3">
+        <label for="placa" class="col-sm-2 col-form-label">Placa do veículo</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="placa" required ngModel #placa="ngModel" name="placa">
         </div>
       </div>
-
-
-      <div class="form-check col-4">
-        <label class="form-label" for="inputSexo">Sexo</label>
-
-          <div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" id="inputMasc" value="masculino" name="sexo" ngModel>
-              <label class="form-check-label" for="inputMasc">Masculino</label>
-            </div>
-
-            <div class="form-check form-check-inline">
-              <input class=" form-check-input" type="radio" id="inputFem" value="feminino" name="sexo" ngModel>
-              <label class=" form-check-label" for="inputFem">Feminino</label>
-            </div>
+      <div class="row mb-3">
+        <label for="km" class="col-sm-2 col-form-label">Km autal do veículo</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="km" required ngModel #km="ngModel" name="km">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="dataVenda" class="col-sm-2 col-form-label">Data e hora da venda</label>
+        <div class="col-sm-10">
+          <input type="datetime-local" class="form-control" id="dataVenda" required ngModel #dataVenda="ngModel" name="dataVenda">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="dataGrnt" class="col-sm-2 col-form-label">Data do final da garantia</label>
+        <div class="col-sm-10">
+          <input type="date" class="form-control" id="dataGrnt" required ngModel #dataGrnt="ngModel" name="dataGrnt">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="cor" class="col-sm-2 col-form-label">Cor do veículo</label>
+        <div class="col-sm-10">
+          <input type="color" class="form-control" id="cor" required ngModel #cor="ngModel" name="cor">
+        </div>
+      </div>
+      <fieldset class="row mb-3">
+        <legend class="col-form-label col-sm-2 pt-0">Adicionais</legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="freioABS" id="freioABS" value="sim"  ngModel #freioABS="ngModel">
+            <label class="form-check-label" for="freioABS">
+              Freio abs
+            </label>
           </div>
-      </div>
-
-      <div class="col-md-6">
-        <label class="form-label" for="email">E-mail</label>
-        <input class="form-control" type="email" name="email" id="email" placeholder="E-mail para contato" ngModel required email #email="ngModel">
-        <div class="alert alert-danger" role="alert" *ngIf="!email.valid && email.touched">
-          Por favor, digite seu e-mail.
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="multimidia" id="multimidia" value="sim" ngModel #multimidia="ngModel">
+            <label class="form-check-label" for="multimidia">
+              Multimidia
+            </label>
+          </div>
+          <div class="form-check disabled">
+            <input class="form-check-input" type="checkbox" name="roda" id="roda" value="sim" ngModel  #roda="ngModel">
+            <label class="form-check-label" for="roda">
+              Roda aro 17
+            </label>
+          </div>
+          <div class="form-check disabled">
+            <input class="form-check-input" type="checkbox" name="corPers" id="corPers" value="sim" ngModel  #corPers="ngModel">
+            <label class="form-check-label" for="corPers">
+              Cor personalizada
+            </label>
+          </div>
+          <div class="form-check disabled">
+            <input class="form-check-input" type="checkbox" name="wifi" id="wifi" value="sim"  ngModel #wifi="ngModel">
+            <label class="form-check-label" for="wifi">
+              Wi-fi
+            </label>
+          </div>
+          <div class="form-check disabled">
+            <input class="form-check-input" type="checkbox" name="seguro" id="seguro" value="sim"  ngModel #seguro="ngModel">
+            <label class="form-check-label" for="seguro">
+              Seguro
+            </label>
+          </div>
         </div>
-      </div>
+      </fieldset>
 
-      <div class="col-md-3">
-        <label class="form-label" for="telefoneP">Telefone</label>
-        <input class="form-control" type="text" name="telefoneP" id="telefoneP" placeholder="Telefone para contato" ngModel required #telefoneP="ngModel" >
-        <div class="alert alert-danger" role="alert" *ngIf="!telefoneP.valid && telefoneP.touched">
-          Por favor, digite um número para contato.
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <label class="form-label" for="telefoneS">Telefone</label>
-        <input class="form-control" type="text" name="telefoneS" id="telefoneS" placeholder="Telefone para recado" ngModel >
-      </div>
-
-
-      <div class="col-md-4">
-        <label class="form-label" for="inputRg">Número do RG</label>
-        <input class="form-control" type="text" name="rg" id="inputRg" placeholder="Digite o número do seu rg" ngModel required #rg="ngModel">
-        <div class="alert alert-danger" role="alert" *ngIf="!rg.valid && rg.touched">
-          Por favor, digite seu RG.
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <label class="form-label" for="inputOrgE">Orgão emissor</label>
-        <input class="form-control" type="text" name="orgE" id="inputOrgE" placeholder="Digite o orgão emissor" ngModel required #orgE="ngModel">
-        <div class="alert alert-danger" role="alert" *ngIf="!orgE.valid && orgE.touched">
-          Por favor, digite o Orgaão emissor do seu RG.
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <label class="form-label" for="inputFotoRg">Foto segurando o RG</label >
-        <input class="form-control" type="file" name="fotoRG" id="inputFotoRg" ngModel required #fotoRG="ngModel">
-        <div class="alert alert-danger" role="alert" *ngIf="!fotoRG.valid && fotoRG.touched">
-          Por favor, nos envie uma foto ao lado do seu rg.
-        </div>
-      </div>
-
-    <h2>Endereço</h2>
-
-    <div class="col-md-3">
-      <label class="form-label" for="cep">CEP</label>
-      <input class="form-control" type="text" name="cep" id="cep" placeholder="Digite o CEP" ngModel  ngModel required #cep="ngModel"(blur)="consultaCEP(cep.value)" >
-      <div class="alert alert-danger" role="alert" *ngIf="!cep.valid && cep.touched">
-        Por favor, digite o cep da sua residência.
-      </div>
-    </div>
-
-    <div class="col-md-3">
-      <label class="form-label" for="numeroRes">Número da residência</label>
-      <input class="form-control" type="number" name="numeroRes" id="numeroRes" placeholder="Digite o número da residência " ngModel required #numeroRes="ngModel">
-      <div class="alert alert-danger" role="alert" *ngIf="!numeroRes.valid && numeroRes.touched">
-        Por favor, digite o número da sua residência.
-      </div>
-    </div>
-
-    <div class="col-md-6">
-      <label class="form-label" for="complemento">Complemento</label>
-      <input class="form-control" type="text" name="complemento" id="complementol" placeholder="Digite o complemento" ngModel>
-    </div>
-
-    <div class="col-md-12">
-      <label class="form-label" for="inputLogadouro">Logadouro</label>
-      <input class="form-control" type="text" name="logadouro" id="inputLogadouro" placeholder="Digite o nome da rua" ngModel >
-    </div>
-
-    <div class="col-md-5">
-      <label class="form-label" for="bairro">Bairro</label>
-      <input class="form-control" type="text" name="bairro" id="bairro" placeholder="Digite o bairro" ngModel>
-    </div>
-
-    <div class="col-md-4">
-      <label class="form-label" for="cidade">Cidade</label>
-      <input class="form-control" type="text" name="cidade" id="cidade" placeholder="Digite a cidade"ngModel >
-    </div>
-
-    <div class="col-md-3">
-      <label class="form-label" for="uf">Estado</label>
-      <input class="form-control" type="text" name="uf" id="uf" placeholder="Digite o estado" ngModel>
-    </div>
-
-
-    <button type="submit" class="btn btn-primary " (click)="onSubmit">Enviar</button>
-
-
-
+      <input type="submit" class="btn btn-primary " (click)="onSubmit">
   </form>
-
-  <div>
-  </div>
 </body>

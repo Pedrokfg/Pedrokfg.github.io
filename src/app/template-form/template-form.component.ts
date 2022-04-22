@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { TemplateFormService } from './template-form.service';
+
 
 @Component({
   selector: 'app-template-form',
@@ -10,34 +12,47 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TemplateFormComponent implements OnInit {
 
-
-  consultaCEP(cep: any) {
-
-    cep = cep.replace (/\D/g, '');
-
-    if (cep != null && cep !== '') {
-      let validacep = /^[0-9]{8}$/;
-
-      if (validacep.test(cep)){
-
-        this.http.get(`//viacep.com.br/ws/${cep}/json/`)
-          .pipe(map((dados: any) => dados))
-          .subscribe(dados => console.log(dados));
-      }
-    }
-}
+  constructor(private TemplateFormService:TemplateFormService){}
 
 
-
-  onSubmit(form: any){
-    console.log(form.value);
-
+  consultaCep(cep:any, form:any){
+    this.TemplateFormService.buscar(cep).subscribe((dados)=> this.popularForm(dados, form, ));
   }
 
 
-  constructor(private http: HttpClient) { }
+  popularForm(dados:any, form:any, ){
+    form.setValue({
+      complemento:null,
+      numeroRes:null,
+      nome:null,
+      sobrenome:null,
+      cpf:null,
+      nasc:null,
+      email:null,
+      sexo:null,
+      telefoneP:null,
+      telefoneS:null,
+      rg:null,
+      orgE:null,
+      fotoRG:null,
+      valor:dados.cep,
+      logradouro:dados.logradouro,
+      bairro:dados.bairro,
+      cidade:dados.localidade,
+      uf:dados.uf
+    })
+  }
+
+
+
+
+  onSubmit(form:any){
+    console.log(form.value);
+
+  }
 
   ngOnInit(): void {
   }
 
 }
+

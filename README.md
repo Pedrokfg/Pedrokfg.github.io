@@ -1,27 +1,58 @@
-# Tab
+# 1º Projeto de DevWeb
+<br>
+<p>Aluno Pedro Henrique Vilela Silva RA: 202108528188
+Aluno: Gustavo de Arruda Barbosa RA: 202108774294</p>
+<br>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+## 1º etapa
+<br>
+<p>Como o nosso prazo e disponibilidade foi curto decidimos fazer algo mais simples
+porem funcional, a ideia inicial era de fazer a homepage ser um catalogo de veiculos
+que estivesse disponivel para locação, porem dicidimos de ja iniciar na homepage de
+cadastro do usuario. Fizemos 2 páginas de cadastro: 1- Cadastro do usuário, 2- Cadastro
+do veiculo. </p>
+<br>
+<p> Para isso fizemos uma nav bar com o sistema de rotas para que pudessemos navegar de um formulario a outro</p><br>
+<h1 align="center">
+  <img alt="nav" title="NavBar" src="./nav.png"/> 
+</h1>
+<br>
+<p> Com isso obtinhamos esse Resultado</p>
+<br>
+<h1 align="center">
+  <img alt="nav" title="NavBarGif" src="./navBar.gif"/> 
+</h1>
 
-## Development server
+## 2º etapa
+<p>
+A segunda etapa foi fazer o forumalirio de cadastro do cliente com suas informações básicas, usamos a função do *FormsModule*
+para podermos criar um console log com as informações obtidas pelo formulario.
+</p>
+<p>
+Usamos um service do angular para poder fazer a consulta do cep na api do ViaCep para isso tivesse que usar o *HttpClientModule*
+</p>
+<h1 align="center">
+  <img alt="nav" title="serviceCEP" src="./serviceCep.png"/> 
+</h1>
+<p>
+Fizemos uma função no component que quando o foco do input do cep é perdido, o sistema pega o valor digitado, faz a consulta na api atraves dessa service e logo após popula os campos correspondentes
+</p>
+<h1 align="center">
+  <img alt="nav" title="serviceCEP" src="./componentCep.png"/> 
+</h1>
+<p>
+Obtendo este resultado
+</p>
+<h1 align="center">
+  <img alt="nav" title="ExemploCep" src="./exemploCep.gif"/> 
+</h1>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 3º etapa
 
-## Code scaffolding
+<p>
+No outro formulario fizemos o básico. Usando o bootstrap fizemos um formulario que coleta os dados do veiculo a ser cadastrado no sistema e um tambem uma função que armazena esses dados em um console log 
+</p>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<h1 align="center">
+  <img alt="nav" title="ExemploCadastroVeiculo" src="./exCadVeiculo.gif"/> 
+</h1>
