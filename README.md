@@ -3,7 +3,7 @@
 <p>Aluno Pedro Henrique Vilela Silva RA: 202108528188
 Aluno: Gustavo de Arruda Barbosa RA: 202108774294</p>
 <br>
-
+Nosso grupo ultilizou a versão do @angular/cli 10
 ## 1º etapa
 <br>
 <p>Como o nosso prazo e disponibilidade foi curto decidimos fazer algo mais simples
